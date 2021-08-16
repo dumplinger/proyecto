@@ -1,23 +1,28 @@
-function restaurante(a, b, c, d){
-    this.opcion1 = a;
-    this.opcion2 = b;
-    this.opcion3 = c;
-    this.opcion4 = d;
+function compare_tiempo(a, b){
+    if(a.tiempo < b.tiempo){
+            return -1;
+    }else if(a.tiempo > b.tiempo){
+            return 1;
+    }else{
+            return 0;
     }
-
-
-const vegetariano = new restaurante('Guacamole', 'La Sibarita', 'La Temeraria', 'Chipotle')
-const carnes = new restaurante('McDonalds', 'Burger King', 'La Pasiva', 'Pearsons')
-const china = new restaurante('Cantón Chino', 'Sui Yuan', 'Arrolladitos', 'Ramen Noodles')
-const pocitos = new restaurante('Berretin', 'Subway', 'Gorgonzola', 'Espinaca')
-const cordon = new restaurante('Torrente', 'Ratatouille', 'Meryl', 'Ramona')
-const malvin = new restaurante('Cantón Chino', 'La Pasiva', 'Ramen Noodles', 'Ramona')
-
+  }
 
 //ARRAY
 
-const restaurantes = [ 
-    { id: 1,  nombre: "Guacamole", precio: 2, vegetariano: true, delivery: true, ubicacion:"Centro", tipoDeComida: "veggie"},
+const recetas = [ 
+    { id: 1,  nombre: "Guacamole", ingredientes: ["palta", "cebolla", "tomate", "limon"], ingredientesOpcionales: ["merken", "pimienta"], vegano: true, tiempo: 5, tipoDeComida: ["snack", "acompañamiento", "salado"] },
+    { id: 2,  nombre: "Pasta Caprese", ingredientes: ["fideos", "tomate", "albahaca", "queso", "aceite"], vegano: true, tiempo: 30, tipoDeComida: ["almuerzo", "cena", "salado"]},
+    { id: 3,  nombre: "Wrap de verduras", ingredientes: ["tortilla", "queso", "cebolla", "tomate"], ingredientesOpcionales: ["morron", "berenjena", "garbanzos"], vegano: false, tiempo: 5, tipoDeComida: ["almuerzo", "cena", "salado"]},
+    { id: 4,  nombre: "Sandwich Margarita", ingredientes: ["pan", "queso", "salsa de tomate", "albahaca", "manteca"], vegano: false, tiempo: 5, tipoDeComida: ["almuerzo", "cena", "salado"]},
+    { id: 5,  nombre: "Omelette Rapidito", ingredientes: ["huevo", "queso", "leche", "aceite"], ingredientesOpcionales: ["arvejas", "jamon veg", "albahaca", "tomate"], vegano: false, tiempo: 5, tipoDeComida: ["almuerzo", "cena", "salado", "desayuno"]},
+    { id: 6,  nombre: "Garbanzos Crunchy", ingredientes: ["garbanzos", "aceite"], ingredientesOpcionales: ["pimenton", "ajíl", "curry"], vegano: true, tiempo: 30, tipoDeComida: ["snack", "acompañamiento", "salado"]},
+    { id: 7,  nombre: "Chop Suey", ingredientes: ["fideos", "cebolla", "morron", "salsa de soja"], ingredientesOpcionales: ["berenjena", "ajo", "albahaca"], vegano: true, tiempo: 30, tipoDeComida: ["snack", "acompañamiento", "salado"]},
+    { id: 8,  nombre: "Huevitos Revueltos", ingredientes: ["huevo", "aceite", "pan"], ingredientesOpcionales: ["queso", "cibulette", "albahaca", "pimienta"], vegano: false, tiempo: 5, tipoDeComida: ["snack", "desayuno", "almuerzo", "salado"]},
+    { id: 9,  nombre: "Panqueques de Banana", ingredientes: ["banana", "avena"], ingredientesOpcionales: ["miel", "mermelada"], vegano: true, tiempo: 5, tipoDeComida: ["snack", "desayuno", "dulce"]},
+
+
+
     { id: 2,  nombre: "La Sibarita", precio: 3, vegetariano: true, delivery: true, ubicacion:"Cordon", tipoDeComida: "veggie"},
     { id: 3,  nombre: "La Temeraria", precio: 2, vegetariano: true, delivery: true, ubicacion:"Parque Rodo", tipoDeComida: "veggie"},
     { id: 4,  nombre: "Chipotle", precio: 2, vegetariano: true, delivery: true, ubicacion:"Malvin", tipoDeComida: "veggie"},
@@ -35,21 +40,20 @@ const restaurantes = [
 
 
 //FUNCION FILTER
-const restaurantesOpcionesVegetarianos = restaurantes.filter(restaurantes => restaurantes.vegetariano === true); 
-console.log(restaurantesOpcionesVegetarianos);
+const recetasRapidas = recetas.filter(recetas => recetas.tiempo === 5); 
+console.log(recetasRapidas);
 
-const restaurantesUbicacion = restaurantes.filter(restaurantes => restaurantes.ubicacion === "Centro"); 
-console.log(restaurantesUbicacion);
-
-const restaurantesBaratos = restaurantes.filter(restaurantes => restaurantes.precio < 2); 
-console.log(restaurantesUbicacion);
+console.log("Lista de recetas en orden de tiempo");
+console.log(recetas.sort(compare_tiempo));
 
 
-//PROMPT
 
-let entrada = prompt("¿Querés pedir delivery o salir a comer?");
+
+/*PROMPT
+
+let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo / un buen rato / 5 minutos");
    switch (entrada) {
-        case "delivery":
+        case "todo el tiempo del mundo":
             let delivery = prompt("¿Que te pinta comer? <br /> (veggie / carnes / comida china)");
             switch (delivery) {
                 case "veggie":
@@ -95,7 +99,7 @@ let entrada = prompt("¿Querés pedir delivery o salir a comer?");
                 } 
         break;
             
-        case "salir":
+        case "un buen rato":
             let salir = prompt("¿Dónde te gustaría ir a comer? <br /> (pocitos / cordon / malvin)");
             switch (salir) {
                 case "pocitos":
@@ -137,9 +141,22 @@ let entrada = prompt("¿Querés pedir delivery o salir a comer?");
                     <li>${vegetariano.opcion4}</li>
                     </ol>
                     </div>`)    
-                    break;   
+                    break; 
+             default:
+                        document.write(`<div class="notification is-primary margin"><button class="delete"></button>¿Estás <strong>indeciso?</strong> Te dejamos algunas opciones<br />
+                        <ol>
+                        <li>${china.opcion1}</li>
+                        <li>${vegetariano.opcion2}</li>
+                        <li>${carnes.opcion3}</li>
+                        <li>${vegetariano.opcion4}</li>
+                        </ol>
+                        </div>`)    
+                        break;
+                    } 
+
+  
     }
-}    
 
 
+*/
 
