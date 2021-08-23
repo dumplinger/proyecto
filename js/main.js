@@ -51,8 +51,17 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                         return true;
                       
                       });
-                    let resultado = document.querySelector('section div div div div h2')
-                    resultado.innerText = (JSON.stringify(recetas))
+                    
+                    
+                      for (var receta of recetas) {
+                        let result = document.createElement("div");
+                        //Definimos el innerHTML del elemento con una plantilla de texto
+                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                        document.body.appendChild(result);
+                    }
+                    
                     break;
                 case "merienda":
                     var desayunoMeriendaElaborado = {
@@ -77,8 +86,7 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                         return true;
                       
                       });
-                                          let resultado = document.querySelector('section div div div div h2')
-                    resultado.innerText = (JSON.stringify(recetas))
+                                          
                     break;      
                 case "almuerzo":
                     var almuerzoCenaElaborado = {
@@ -103,8 +111,7 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                         return true;
                       
                       });
-                                        let resultado = document.querySelector('section div div div div h2')
-                    resultado.innerText = (JSON.stringify(recetas))             
+      
                     break;
                 case "cena":
                     var almuerzoCenaElaborado = {
@@ -129,8 +136,7 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                         return true;
                       
                       });
-                                          let resultado = document.querySelector('section div div div div h2')
-                    resultado.innerText = (JSON.stringify(recetas))             
+       
                     break;
                 default:
                     const snacks = recetas.filter(recetas => recetas.tipoDeComida === "snack"); 
@@ -166,8 +172,7 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                         return true;
                       
                       });
-                                        let resultado = document.querySelector('section div div div div h2')
-                    resultado.innerText = (JSON.stringify(recetas))
+
                     break;                     
                 case "merienda":
                   var desayunoMeriendaElaborado = {
@@ -192,8 +197,7 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                     return true;
                   
                   });
-                                    let resultado = document.querySelector('section div div div div h2')
-                    resultado.innerText = (JSON.stringify(recetas))
+
                 break;      
                 case "almuerzo":
                   var almuerzoCenaElaborado = {
@@ -277,8 +281,7 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                         return true;
                       
                       });
-                                        let resultado = document.querySelector('section div div div div h2')
-                    resultado.innerText = (JSON.stringify(recetas))
+
                     break;                     
                 case "merienda":
                   var desayunoMeriendaRapido = {
@@ -303,8 +306,7 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                     return true;
                   
                   });
-                                    let resultado = document.querySelector('section div div div div h2')
-                    resultado.innerText = (JSON.stringify(recetas))
+
                 break;  
                 case "almuerzo":
                   var almuerzoCenaRapido = {
@@ -329,8 +331,7 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                     return true;
                   
                   });
-                                      let resultado = document.querySelector('section div div div div h2')
-                    resultado.innerText = (JSON.stringify(recetas))
+
                     break;
                 case "cena":
                   var almuerzoCenaRapido = {
@@ -355,8 +356,7 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                     return true;
                   
                   });
-                                      let resultado = document.querySelector('section div div div div h2')
-                    resultado.innerText = (JSON.stringify(recetas))
+
                     break;
                 default:
                   const snacks = recetas.filter(recetas => recetas.tipoDeComida === "snack"); 
