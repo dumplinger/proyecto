@@ -86,6 +86,15 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                         return true;
                       
                       });
+                    
+                      for (var receta of recetas) {
+                        let result = document.createElement("div");
+                        //Definimos el innerHTML del elemento con una plantilla de texto
+                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                        document.body.appendChild(result);
+                    }
                                           
                     break;      
                 case "almuerzo":
@@ -111,6 +120,15 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                         return true;
                       
                       });
+
+                      for (var receta of recetas) {
+                        let result = document.createElement("div");
+                        //Definimos el innerHTML del elemento con una plantilla de texto
+                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                        document.body.appendChild(result);
+                    }
       
                     break;
                 case "cena":
@@ -136,6 +154,14 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                         return true;
                       
                       });
+                      for (var receta of recetas) {
+                        let result = document.createElement("div");
+                        //Definimos el innerHTML del elemento con una plantilla de texto
+                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                        document.body.appendChild(result);
+                    }
        
                     break;
                 default:
@@ -172,6 +198,15 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                         return true;
                       
                       });
+                    
+                      for (var receta of recetas) {
+                        let result = document.createElement("div");
+                        //Definimos el innerHTML del elemento con una plantilla de texto
+                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                        document.body.appendChild(result);
+                    }
 
                     break;                     
                 case "merienda":
@@ -197,6 +232,14 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                     return true;
                   
                   });
+                  for (var receta of recetas) {
+                    let result = document.createElement("div");
+                    //Definimos el innerHTML del elemento con una plantilla de texto
+                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                    document.body.appendChild(result);
+                }
 
                 break;      
                 case "almuerzo":
@@ -222,6 +265,14 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                     return true;
                   
                   });
+                  for (var receta of recetas) {
+                    let result = document.createElement("div");
+                    //Definimos el innerHTML del elemento con una plantilla de texto
+                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                    document.body.appendChild(result);
+                }
                     break;
                 case "cena":
                   var almuerzoCenaElaborado = {
@@ -246,6 +297,14 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                     return true;
                   
                   });
+                  for (var receta of recetas) {
+                    let result = document.createElement("div");
+                    //Definimos el innerHTML del elemento con una plantilla de texto
+                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                    document.body.appendChild(result);
+                }
                     break;
                 default:
                   const snacks = recetas.filter(recetas => recetas.tipoDeComida === "snack"); 
@@ -282,6 +341,15 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                       
                       });
 
+                      for (var receta of recetas) {
+                        let result = document.createElement("div");
+                        //Definimos el innerHTML del elemento con una plantilla de texto
+                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                        document.body.appendChild(result);
+                    }
+
                     break;                     
                 case "merienda":
                   var desayunoMeriendaRapido = {
@@ -306,6 +374,14 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                     return true;
                   
                   });
+                  for (var receta of recetas) {
+                    let result = document.createElement("div");
+                    //Definimos el innerHTML del elemento con una plantilla de texto
+                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                    document.body.appendChild(result);
+                }
 
                 break;  
                 case "almuerzo":
@@ -331,6 +407,14 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                     return true;
                   
                   });
+                  for (var receta of recetas) {
+                    let result = document.createElement("div");
+                    //Definimos el innerHTML del elemento con una plantilla de texto
+                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                    document.body.appendChild(result);
+                }
 
                     break;
                 case "cena":
@@ -356,6 +440,14 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
                     return true;
                   
                   });
+                  for (var receta of recetas) {
+                    let result = document.createElement("div");
+                    //Definimos el innerHTML del elemento con una plantilla de texto
+                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
+                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
+                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
+                    document.body.appendChild(result);
+                }
 
                     break;
                 default:
