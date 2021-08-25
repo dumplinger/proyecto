@@ -5,7 +5,7 @@
 
 .hero,
 .cta {
-  background: url(/img/banner.jpeg);
+  background: url(../img/banner.jpeg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -50,7 +50,7 @@ hr.content-divider {
 }
 
 #parallax-1 {
-  background: url(/img/closeup.jpg);
+  background: url(../img/closeup.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,7 +63,7 @@ hr.content-divider {
 }
 
 #parallax-2 {
-  background: url(/img/fries.jpg);
+  background: url(../img/fries.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -76,7 +76,7 @@ hr.content-divider {
 }
 
 #parallax-3 {
-  background: url(/img/gourmet.jpg);
+  background: url(../img/gourmet.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
