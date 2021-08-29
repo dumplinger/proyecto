@@ -460,4 +460,21 @@ let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo /
 
 //DOM
 
+let selectElement = document.getElementById("selectComida")
+      selectElement.addEventListener('change', (event) => {
+        const resultado = document.querySelector('.resultado');
+        resultado.textContent = `La comida elegida es ${event.target.value}`;
+    });
+
+let botonVegano = document.getElementById("vegano")
+      botonVegano.addEventListener('change', (event) => {
+        const resultado1 = document.querySelector('.resultado1');
+        resultado1.textContent = `Recetas veganas`;
+    });
+
+let selectElement1 = document.getElementById("selectTiempo")
+      selectElement1.addEventListener('change', (event) => {
+        const resultado2 = document.querySelector('.resultado2');
+        resultado2.textContent = `Dispones de ${event.target.value}`;
+    });
 

@@ -102,3 +102,9 @@ input::placeholder {
   color: white !important;
 }
 
+.cardColor {
+  background-color: rgba(207, 203, 142, 0.89);
+  border-radius: 10px;
+  padding: 4%;
+  margin: 2%;
+}
