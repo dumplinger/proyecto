@@ -1,480 +1,185 @@
 //ARRAY
-var recetas = [ 
-    { id: 1,  nombre: "Guacamole", ingredientes: ["palta", "cebolla", "tomate", "limon"], ingredientesOpcionales: ["merken", "pimienta"], vegano: true, tiempo: 5, tipoDeComida: "snack" },
-    { id: 2,  nombre: "Pasta Caprese", ingredientes: ["fideos", "tomate", "albahaca", "queso", "aceite"], vegano: true, tiempo: 30, tipoDeComida: "almuerzo/cena"},
-    { id: 3,  nombre: "Wrap de verduras", ingredientes: ["tortilla", "queso", "cebolla", "tomate"], ingredientesOpcionales: ["morron", "berenjena", "garbanzos"], vegano: false, tiempo: 5, tipoDeComida: "almuerzo/cena"},
-    { id: 4,  nombre: "Sandwich Margarita", ingredientes: ["pan", "queso", "salsa de tomate", "albahaca", "manteca"], vegano: false, tiempo: 5, tipoDeComida: "almuerzo/cena"},
-    { id: 5,  nombre: "Omelette Rapidito", ingredientes: ["huevo", "queso", "leche", "aceite"], ingredientesOpcionales: ["arvejas", "jamon veg", "albahaca", "tomate"], vegano: false, tiempo: 5, tipoDeComida: "almuerzo/cena"},
-    { id: 6,  nombre: "Garbanzos Crunchy", ingredientes: ["garbanzos", "aceite"], ingredientesOpcionales: ["pimenton", "ajíl", "curry"], vegano: true, tiempo: 30, tipoDeComida: "snack"},
-    { id: 7,  nombre: "Chop Suey", ingredientes: ["fideos", "cebolla", "morron", "salsa de soja"], ingredientesOpcionales: ["berenjena", "ajo", "albahaca"], vegano: true, tiempo: 30, tipoDeComida:  "almuerzo/cena"},
-    { id: 8,  nombre: "Huevitos Revueltos", ingredientes: ["huevo", "aceite", "pan"], ingredientesOpcionales: ["queso", "cibulette", "albahaca", "pimienta"], vegano: false, tiempo: 5, tipoDeComida: "desayuno/merienda"},
-    { id: 9,  nombre: "Panqueques de Banana Fast and Furious", ingredientes: ["banana", "avena"], ingredientesOpcionales: ["miel", "mermelada"], vegano: true, tiempo: 5, tipoDeComida: "desayuno/merienda"},
-    { id: 10,  nombre: "Panqueques Domingueros", ingredientes: ["banana", "avena", "huevo", "leche", "harina", "azucar", "polvo de hornear"], ingredientesOpcionales: ["miel", "mermelada", "canela", "maple syrup"], vegano: false, tiempo: 30, tipoDeComida: "desayuno/merienda"},
-    { id: 11,  nombre: "Overnight Oats", ingredientes: ["avena", "leche", "miel", "vainilla"], ingredientesOpcionales: ["miel", "mermelada", "canela", "maple syrup"], vegano: true, tiempo: 30, tipoDeComida: "desayuno/merienda"},
-    { id: 12,  nombre: "Barritas de avena", ingredientes: ["avena", "miel", "manteca de mani", "canela"], ingredientesOpcionales: ["chocolate"], vegano: true, tiempo: 30, tipoDeComida: "desayuno/merienda"},
+const recetas = [ 
+    { id: 1,  nombre: "Guacamole", ingredientes: ["palta", "cebolla", "tomate", "limon"], ingredientesOpcionales: ["merken", "pimienta"], vegano: true, tiempo: 5, tipoDeComida: "snack", codigo: 5,},
+    { id: 2,  nombre: "Pasta Caprese", ingredientes: ["fideos", "tomate", "albahaca", "queso", "aceite"], vegano: true, tiempo: 30, tipoDeComida: "almuerzo/cena", codigo: 2, img: "img/pasta-caprese.jpg"},
+    { id: 3,  nombre: "Wrap de verduras", ingredientes: ["tortilla", "queso", "cebolla", "tomate"], ingredientesOpcionales: ["morron", "berenjena", "garbanzos"], vegano: false, tiempo: 5, tipoDeComida: "almuerzo/cena", codigo: 1, img: "img/wrap.jpg"},
+    { id: 4,  nombre: "Sandwich Margarita", ingredientes: ["pan", "queso", "salsa de tomate", "albahaca", "manteca"], vegano: false, tiempo: 5, tipoDeComida: "almuerzo/cena", codigo: 1},
+    { id: 5,  nombre: "Omelette Rapidito", ingredientes: ["huevo", "queso", "leche", "aceite"], ingredientesOpcionales: ["arvejas", "jamon veg", "albahaca", "tomate"], vegano: false, tiempo: 5, tipoDeComida: "almuerzo/cena", codigo: 1},
+    { id: 6,  nombre: "Garbanzos Crunchy", ingredientes: ["garbanzos", "aceite"], ingredientesOpcionales: ["pimenton", "ajíl", "curry"], vegano: true, tiempo: 30, tipoDeComida: "snack", codigo: 5},
+    { id: 7,  nombre: "Chop Suey", ingredientes: ["fideos", "cebolla", "morron", "salsa de soja"], ingredientesOpcionales: ["berenjena", "ajo", "albahaca"], vegano: true, tiempo: 30, tipoDeComida:  "almuerzo/cena", codigo: 2},
+    { id: 8,  nombre: "Huevitos Revueltos", ingredientes: ["huevo", "aceite", "pan"], ingredientesOpcionales: ["queso", "cibulette", "albahaca", "pimienta"], vegano: false, tiempo: 5, tipoDeComida: "desayuno/merienda", codigo: 3, img: "img/huevos.jpg"},
+    { id: 9,  nombre: "Panqueques de Banana Fast and Furious", ingredientes: ["banana", "avena"], ingredientesOpcionales: ["miel", "mermelada"], vegano: true, tiempo: 5, tipoDeComida: "desayuno/merienda", codigo: 3},
+    { id: 10,  nombre: "Panqueques Domingueros", ingredientes: ["banana", "avena", "huevo", "leche", "harina", "azucar", "polvo de hornear"], ingredientesOpcionales: ["miel", "mermelada", "canela", "maple syrup"], vegano: false, tiempo: 30, tipoDeComida: "desayuno/merienda", codigo: 4, img:"img/panqueques.jpg"},
+    { id: 11,  nombre: "Overnight Oats", ingredientes: ["avena", "leche", "miel", "vainilla"], ingredientesOpcionales: ["miel", "mermelada", "canela", "maple syrup"], vegano: true, tiempo: 30, tipoDeComida: "desayuno/merienda", codigo: 4},
+    { id: 12,  nombre: "Barritas de avena", ingredientes: ["avena", "miel", "manteca de mani", "canela"], ingredientesOpcionales: ["chocolate"], vegano: true, tiempo: 30, tipoDeComida: "desayuno/merienda", codigo: 4},
 
 
 ]
 
+const almuerzoCenaRapido = recetas.filter(receta => receta.codigo === 1); 
+console.log(almuerzoCenaRapido);//
+
+const almuerzoCenaLento = recetas.filter(receta => receta.codigo === 2); 
+console.log(almuerzoCenaLento);//
+
+const desayunoMeriendaRapido = recetas.filter(receta => receta.codigo === 3); 
+console.log(desayunoMeriendaRapido);//
+
+const desayunoMeriendaLento = recetas.filter(receta => receta.codigo === 4); 
+console.log(desayunoMeriendaLento);//
+
+const snacks = recetas.filter(receta => receta.codigo === 5); 
+console.log(snacks);//
 
 
-//PROMPT
-let entrada = prompt("¿Con cuánto tiempo disponés? todo el tiempo del mundo / un buen rato / 5 minutos");
-//Primero se le pregunta al usuario el tiempo con el que dispone, basado en su respuesta se le consulta que tipo de comida
-//Generé filtros que toman ambas condiciones y seleccionan las recetas que se adecúan mejor para sugerirle al usuario mediante un alert
-
-   switch (entrada) {
-        case "todo el tiempo del mundo":
-            let muchoTiempo = prompt("¿Que vas a comer? (desayuno / almuerzo / merienda / cena)");
-            switch (muchoTiempo) {
-                case "desayuno":
-                    
-                    var desayunoMeriendaElaborado = {
-
-                        tipoDeComida: "desayuno/merienda",
-                      
-                        tiempo: 30
-                      
-                      };  
-                       
-                      
-                    recetas = recetas.filter(function(item) {
-                      
-                        for (var key in desayunoMeriendaElaborado) {
-                      
-                          if (item[key] === undefined || item[key] != desayunoMeriendaElaborado[key])
-                      
-                            return false;
-                      
-                        }
-                      
-                        return true;
-                      
-                      });
-                    
-                    
-                      for (var receta of recetas) {
-                        let result = document.createElement("div");
-                        //Definimos el innerHTML del elemento con una plantilla de texto
-                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                        document.body.appendChild(result);
-                    }
-                    
-                    break;
-                case "merienda":
-                    var desayunoMeriendaElaborado = {
-
-                        tipoDeComida: "desayuno/merienda",
-                      
-                        tiempo: 30
-                      
-                      };  
-                       
-                      
-                    recetas = recetas.filter(function(item) {
-                      
-                        for (var key in desayunoMeriendaElaborado) {
-                      
-                          if (item[key] === undefined || item[key] != desayunoMeriendaElaborado[key])
-                      
-                            return false;
-                      
-                        }
-                      
-                        return true;
-                      
-                      });
-                    
-                      for (var receta of recetas) {
-                        let result = document.createElement("div");
-                        //Definimos el innerHTML del elemento con una plantilla de texto
-                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                        document.body.appendChild(result);
-                    }
-                                          
-                    break;      
-                case "almuerzo":
-                    var almuerzoCenaElaborado = {
-
-                        tipoDeComida: "almuerzo/cena",
-                      
-                        tiempo: 30
-                      
-                      };  
-                       
-                      
-                    recetas = recetas.filter(function(item) {
-                      
-                        for (var key in almuerzoCenaElaborado) {
-                      
-                          if (item[key] === undefined || item[key] != almuerzoCenaElaborado[key])
-                      
-                            return false;
-                      
-                        }
-                      
-                        return true;
-                      
-                      });
-
-                      for (var receta of recetas) {
-                        let result = document.createElement("div");
-                        //Definimos el innerHTML del elemento con una plantilla de texto
-                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                        document.body.appendChild(result);
-                    }
-      
-                    break;
-                case "cena":
-                    var almuerzoCenaElaborado = {
-
-                        tipoDeComida: "almuerzo/cena",
-                      
-                        tiempo: 30
-                      
-                      };  
-                       
-                      
-                    recetas = recetas.filter(function(item) {
-                      
-                        for (var key in almuerzoCenaElaborado) {
-                      
-                          if (item[key] === undefined || item[key] != almuerzoCenaElaborado[key])
-                      
-                            return false;
-                      
-                        }
-                      
-                        return true;
-                      
-                      });
-                      for (var receta of recetas) {
-                        let result = document.createElement("div");
-                        //Definimos el innerHTML del elemento con una plantilla de texto
-                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                        document.body.appendChild(result);
-                    }
-       
-                    break;
-                default:
-                    const snacks = recetas.filter(recetas => recetas.tipoDeComida === "snack"); 
-                    alert(JSON.stringify(snacks));
-                    break;
-                } 
-        break;
-            
-        case "un buen rato":
-            let buenRato = prompt("¿Que vas a comer? (desayuno / almuerzo / merienda / cena)");
-            switch (buenRato) {
-                case "desayuno":
-                       
-                    var desayunoMeriendaElaborado = {
-
-                        tipoDeComida: "desayuno/merienda",
-                      
-                        tiempo: 30
-                      
-                      };  
-                       
-                      
-                    recetas = recetas.filter(function(item) {
-                      
-                        for (var key in desayunoMeriendaElaborado) {
-                      
-                          if (item[key] === undefined || item[key] != desayunoMeriendaElaborado[key])
-                      
-                            return false;
-                      
-                        }
-                      
-                        return true;
-                      
-                      });
-                    
-                      for (var receta of recetas) {
-                        let result = document.createElement("div");
-                        //Definimos el innerHTML del elemento con una plantilla de texto
-                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                        document.body.appendChild(result);
-                    }
-
-                    break;                     
-                case "merienda":
-                  var desayunoMeriendaElaborado = {
-
-                    tipoDeComida: "desayuno/merienda",
-                  
-                    tiempo: 30
-                  
-                  };  
-                   
-                  
-                recetas = recetas.filter(function(item) {
-                  
-                    for (var key in desayunoMeriendaElaborado) {
-                  
-                      if (item[key] === undefined || item[key] != desayunoMeriendaElaborado[key])
-                  
-                        return false;
-                  
-                    }
-                  
-                    return true;
-                  
-                  });
-                  for (var receta of recetas) {
-                    let result = document.createElement("div");
-                    //Definimos el innerHTML del elemento con una plantilla de texto
-                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                    document.body.appendChild(result);
-                }
-
-                break;      
-                case "almuerzo":
-                  var almuerzoCenaElaborado = {
-
-                    tipoDeComida: "almuerzo/cena",
-                  
-                    tiempo: 30
-                  
-                  };  
-                   
-                  
-                recetas = recetas.filter(function(item) {
-                  
-                    for (var key in almuerzoCenaElaborado) {
-                  
-                      if (item[key] === undefined || item[key] != almuerzoCenaElaborado[key])
-                  
-                        return false;
-                  
-                    }
-                  
-                    return true;
-                  
-                  });
-                  for (var receta of recetas) {
-                    let result = document.createElement("div");
-                    //Definimos el innerHTML del elemento con una plantilla de texto
-                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                    document.body.appendChild(result);
-                }
-                    break;
-                case "cena":
-                  var almuerzoCenaElaborado = {
-
-                    tipoDeComida: "almuerzo/cena",
-                  
-                    tiempo: 30
-                  
-                  };  
-                   
-                  
-                recetas = recetas.filter(function(item) {
-                  
-                    for (var key in almuerzoCenaElaborado) {
-                  
-                      if (item[key] === undefined || item[key] != almuerzoCenaElaborado[key])
-                  
-                        return false;
-                  
-                    }
-                  
-                    return true;
-                  
-                  });
-                  for (var receta of recetas) {
-                    let result = document.createElement("div");
-                    //Definimos el innerHTML del elemento con una plantilla de texto
-                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                    document.body.appendChild(result);
-                }
-                    break;
-                default:
-                  const snacks = recetas.filter(recetas => recetas.tipoDeComida === "snack"); 
-                  document.write(JSON.stringify(snacks));  
-                    break; 
-                  }
-        break;
-
-        case "5 minutos":
-            let cincoMin = prompt("¿Que vas a comer? (desayuno / almuerzo / merienda / cena)");
-            switch (cincoMin) {
-                case "desayuno":
-                       
-                    var desayunoMeriendaRapido = {
-
-                        tipoDeComida: "desayuno/merienda",
-                      
-                        tiempo: 5
-                      
-                      };  
-                       
-                      
-                    recetas = recetas.filter(function(item) {
-                      
-                        for (var key in desayunoMeriendaRapido) {
-                      
-                          if (item[key] === undefined || item[key] != desayunoMeriendaRapido[key])
-                      
-                            return false;
-                      
-                        }
-                      
-                        return true;
-                      
-                      });
-
-                      for (var receta of recetas) {
-                        let result = document.createElement("div");
-                        //Definimos el innerHTML del elemento con una plantilla de texto
-                        result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                                <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                                <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                        document.body.appendChild(result);
-                    }
-
-                    break;                     
-                case "merienda":
-                  var desayunoMeriendaRapido = {
-
-                    tipoDeComida: "desayuno/merienda",
-                  
-                    tiempo: 5
-                  
-                  };  
-                   
-                  
-                recetas = recetas.filter(function(item) {
-                  
-                    for (var key in desayunoMeriendaRapido) {
-                  
-                      if (item[key] === undefined || item[key] != desayunoMeriendaRapido[key])
-                  
-                        return false;
-                  
-                    }
-                  
-                    return true;
-                  
-                  });
-                  for (var receta of recetas) {
-                    let result = document.createElement("div");
-                    //Definimos el innerHTML del elemento con una plantilla de texto
-                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                    document.body.appendChild(result);
-                }
-
-                break;  
-                case "almuerzo":
-                  var almuerzoCenaRapido = {
-
-                    tipoDeComida: "almuerzo/cena",
-                  
-                    tiempo: 5
-                  
-                  };  
-                   
-                  
-                recetas = recetas.filter(function(item) {
-                  
-                    for (var key in almuerzoCenaRapido) {
-                  
-                      if (item[key] === undefined || item[key] != almuerzoCenaRapido[key])
-                  
-                        return false;
-                  
-                    }
-                  
-                    return true;
-                  
-                  });
-                  for (var receta of recetas) {
-                    let result = document.createElement("div");
-                    //Definimos el innerHTML del elemento con una plantilla de texto
-                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                    document.body.appendChild(result);
-                }
-
-                    break;
-                case "cena":
-                  var almuerzoCenaRapido = {
-
-                    tipoDeComida: "almuerzo/cena",
-                  
-                    tiempo: 5
-                  
-                  };  
-                   
-                  
-                recetas = recetas.filter(function(item) {
-                  
-                    for (var key in almuerzoCenaRapido) {
-                  
-                      if (item[key] === undefined || item[key] != almuerzoCenaRapido[key])
-                  
-                        return false;
-                  
-                    }
-                  
-                    return true;
-                  
-                  });
-                  for (var receta of recetas) {
-                    let result = document.createElement("div");
-                    //Definimos el innerHTML del elemento con una plantilla de texto
-                    result.innerHTML = `<h3>La receta que te recomendamos es: ${receta.nombre}</h3>
-                                            <p>Sus ingredientes son: ${receta.ingredientes}</p>
-                                            <b>Tiempo para cocinarlo: ${receta.tiempo} minutos</b>`;
-                    document.body.appendChild(result);
-                }
-
-                    break;
-                default:
-                  const snacks = recetas.filter(recetas => recetas.tipoDeComida === "snack"); 
-                  document.write(JSON.stringify(snacks));  
-                    break; 
-                  }
-        break;
-}
 
 //DOM
 
-let selectElement = document.getElementById("selectComida")
-      selectElement.addEventListener('change', (event) => {
-        const resultado = document.querySelector('.resultado');
-        resultado.textContent = `La comida elegida es ${event.target.value}`;
-    });
 
-let botonVegano = document.getElementById("vegano")
-      botonVegano.addEventListener('change', (event) => {
-        const resultado1 = document.querySelector('.resultado1');
-        resultado1.textContent = `Recetas veganas`;
-    });
+function show(){
+ 
+  let name_rules=document.getElementById("form_utopian").selectComida.value;
+  let rules_description=document.getElementById("sectionparamodal");
+ 
+  if (name_rules=="desayuno")
+    {
+      const desayunoMeriendaRapido = recetas.filter(receta => receta.codigo === 3); 
+      for (const receta of desayunoMeriendaRapido) {
+        $("#sectionparamodal").append(`<section class = "section">
+        <div class = "container">
+           <div id="modal" class = "modal">
+              <div class = "modal-background"></div>
+                    <article class = "media">
+                      <div class = "media-content">
+                        <div class = "content">
+                          <div class="card">
+                            <div class="header">
+                            <img src="${receta.img}" alt="">
+                            </div>
+                            <div class="text">
+                               <h1 class="food">
+                               ${receta.nombre}
+                               </h1>                  
+                               <p class="info">Ingredientes:${receta.ingredientes}</p>
+                            </div>
+                            <a href="#" class="btn">A cocinar!</a>
+                         </div>
+                        </div>
+                     </div>
+                    </article>
+              <button class = "modal-close is-large" aria-label="close"></button>
+           </div>
+        </div>
+      </section>`)
+      }
+    }
+  else if (name_rules=="almuerzo")
+    {
+      const almuerzoCenaRapido = recetas.filter(receta => receta.codigo === 1); 
+      for (const receta of almuerzoCenaRapido) {
+        $("#sectionparamodal").append(`<section class = "section">
+        <div class = "container">
+           <div id="modal" class = "modal">
+              <div class = "modal-background"></div>
+                    <article class = "media">
+                      <div class = "media-content">
+                        <div class = "content">
+                          <div class="card">
+                            <div class="header">
+                            <img src="${receta.img}" alt="">
+                            </div>
+                            <div class="text">
+                               <h1 class="food">
+                               ${receta.nombre}
+                               </h1>                  
+                               <p class="info">Ingredientes:${receta.ingredientes}</p>
+                            </div>
+                            <a href="#" class="btn">A cocinar!</a>
+                         </div>
+                        </div>
+                     </div>
+                    </article>
+              <button class = "modal-close is-large" aria-label="close"></button>
+           </div>
+        </div>
+      </section>`)
+      }
+    }
+  else if (name_rules=="merienda")
+    {
+      const desayunoMeriendaLento = recetas.filter(receta => receta.codigo === 4); 
+      for (const receta of desayunoMeriendaLento) {
+        $("#sectionparamodal").append(`<section class = "section">
+        <div class = "container">
+           <div id="modal" class = "modal">
+              <div class = "modal-background"></div>
+                    <article class = "media">
+                      <div class = "media-content">
+                        <div class = "content">
+                          <div class="card">
+                            <div class="header">
+                            <img src="${receta.img}" alt="">
+                            </div>
+                            <div class="text">
+                               <h1 class="food">
+                               ${receta.nombre}
+                               </h1>                  
+                               <p class="info">Ingredientes:${receta.ingredientes}</p>
+                            </div>
+                            <a href="#" class="btn">A cocinar!</a>
+                         </div>
+                        </div>
+                     </div>
+                    </article>
+              <button class = "modal-close is-large" aria-label="close"></button>
+           </div>
+        </div>
+      </section>`)
+      }
 
-let selectElement1 = document.getElementById("selectTiempo")
-      selectElement1.addEventListener('change', (event) => {
-        const resultado2 = document.querySelector('.resultado2');
-        resultado2.textContent = `Dispones de ${event.target.value}`;
-    });
+    }
 
+    else if (name_rules=="cena")
+    {
+      const almuerzoCenaLento = recetas.filter(receta => receta.codigo === 2); 
+      for (const receta of almuerzoCenaLento) {
+        $("#sectionparamodal").append(`<section class = "section">
+        <div class = "container">
+           <div id="modal" class = "modal">
+              <div class = "modal-background"></div>
+                    <article class = "media">
+                      <div class = "media-content">
+                        <div class = "content">
+                          <div class="card">
+                            <div class="header">
+                            <img src="${receta.img}" alt="">
+                            </div>
+                            <div class="text">
+                               <h1 class="food">
+                               ${receta.nombre}
+                               </h1>                  
+                               <p class="info">Ingredientes:${receta.ingredientes}</p>
+                            </div>
+                            <a href="#" class="btn">A cocinar!</a>
+                         </div>
+                        </div>
+                     </div>
+                    </article>
+              <button class = "modal-close is-large" aria-label="close"></button>
+           </div>
+        </div>
+      </section>`)
+      }
+    }
+}
+
+$(".modal-button").click(function() {
+  var target = $(this).data("target");
+  $("html").addClass("is-clipped");
+  $(target).addClass("is-active");
+  });
+  
+  $(".modal-close").click(function() {
+  $("html").removeClass("is-clipped");
+  $(this).parent().removeClass("is-active");
+  });
