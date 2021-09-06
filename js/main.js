@@ -183,3 +183,29 @@ $(".modal-button").click(function() {
   $("html").removeClass("is-clipped");
   $(this).parent().removeClass("is-active");
   });
+
+
+//Local storage
+let selectComida = document.getElementById("selectComida");
+let selectTiempo = document.getElementById("selectTiempo");
+let veganoCheckbox = document.getElementById("veganoCheckbox");
+
+let saveButton = document.getElementById("saveButton");
+let retrieveButton = document.getElementById("retrieveButton");
+
+function saveResponses() {
+	localStorage.setItem("Comida", selectComida.value);
+	localStorage.setItem("Tiempo", selectTiempo.value);
+  localStorage.setItem("Vegano", veganoCheckbox.value);
+}
+
+saveButton.addEventListener("click", saveResponses);
+
+function retrieveResponses() {
+	selectComida.value = localStorage.getItem("Comida");
+  selectTiempo.value = localStorage.getItem("Tiempo");
+  veganoCheckbox.value = localStorage.getItem("Vegano");
+}
+
+retrieveButton.addEventListener("click", function(e) { e.preventDefault(); retrieveResponses(); });
+
