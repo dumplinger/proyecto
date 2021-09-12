@@ -10,7 +10,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.8;
+  opacity: 1;
 ;}
 
 .cta {
@@ -110,6 +110,13 @@ input::placeholder {
   margin: 2% 25% 2% 25%;
 }
 
+.cardColor2 {
+  background-color: rgba(207, 203, 142, 0.89);
+  border-radius: 10px;
+  margin: 2% 25% 2% 25%;
+  padding: 1%;  
+}
+
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 * {
   margin: 0;
@@ -188,6 +195,52 @@ img {
   transition: 250ms;
 }
 .card a.btn:hover {
-  background: #17BEBB;
+  background: turquoise;
   transition: 250ms;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+#container {
+  width: 60%;
+  margin: 30px auto;
+  overflow: auto;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.faq li {
+  padding: 20px;
+}
+
+.faq li.q {
+  background:turquoise;
+  font-weight: bold;
+  font-size: 120%;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.faq li.a {
+  background-color: rgba(207, 203, 142, 0.89);
+  display: none;
+  border-radius: 5px;
+
+}
+
+.rotate {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
