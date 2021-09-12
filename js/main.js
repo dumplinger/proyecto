@@ -172,22 +172,14 @@ retrieveButton.addEventListener("click", function(e) { e.preventDefault(); retri
 let speed = 500;
 
 $(document).ready(function () {
-  //Preguntas
   $("li.q").on("click", function (e) {
-    //alert("click");
-    //console.log(e.target);
-    //console.log(this);
-    // Selecciona la siguiente pregunta
     $(this)
       .next()
       .slideToggle(speed)
-      // Selecciona todas las respuestas
       .siblings("li.a")
       .slideUp();
 
-    // Imagen para la pregunta activa
     const img = $(this).children("img");
-    //console.log(img);
     img.toggleClass("rotate");
     $("img").not(img).removeClass("rotate");
   });
